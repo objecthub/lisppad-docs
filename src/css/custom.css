@@ -14,7 +14,7 @@
   --ifm-code-font-size: 85%;
   /* Tighter lines than the Docusaurus defaults (1.65 for text, 1.45 for code blocks). */
   --ifm-line-height-base: 1.45;
-  --ifm-pre-line-height: 1.2;
+  --ifm-pre-line-height: 1.3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -131,20 +131,21 @@
 /* Less padding inside code blocks (Infima default: 1rem all around). */
 .theme-code-block {
   --ifm-pre-padding: 0.7rem;
+  --ifm-code-font-size: 80%;
 }
 
 /* Smaller headings than the Docusaurus defaults (3rem / 2rem / 1.5rem). Infima sets these sizes
  * on the same selectors, so they are repeated here, and again for phones. */
 .markdown h1:first-child {
-  --ifm-h1-font-size: 2.25rem;
+  --ifm-h1-font-size: 2.2rem;
 }
 
 .markdown > h2 {
-  --ifm-h2-font-size: 1.6rem;
+  --ifm-h2-font-size: 1.55rem;
 }
 
 .markdown > h3 {
-  --ifm-h3-font-size: 1.3rem;
+  --ifm-h3-font-size: 1.25rem;
 }
 
 @media (max-width: 576px) {
@@ -239,4 +240,75 @@
 .markdown mark {
   background: none;
   font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * Phones (portrait, or landscape where the viewport is low): all type is 20% smaller. Everything
+ * is sized in rem, so lowering the base size scales text, headings, sidebar and header bar alike.
+ * The header bar is a visible gray in both modes: light gray in light mode, and in dark mode a
+ * lighter gray than the page, with a thin line below.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 576px), (max-width: 996px) and (max-height: 500px) {
+  :root {
+    --ifm-font-size-base: 96%;
+    --navbar-border-color: rgba(0, 0, 0, 0.15);
+  }
+
+  [data-theme='dark'] {
+    --ifm-navbar-background-color: #35373c;
+    --ifm-navbar-search-input-background-color: #46484e;
+    --navbar-border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .navbar {
+    border-bottom: 0.5px solid var(--navbar-border-color);
+  }
+}
+
+/* The navigation drawer of the mobile layout (hamburger menu) takes its background from the header
+ * bar. In light mode it stays white instead of the gray of the bar. */
+[data-theme='light'] .navbar-sidebar {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Info blocks (:::info) use a smaller font. */
+.theme-admonition-info {
+  font-size: 92%;
+}
+
+/* Text in tables is 10% smaller than the surrounding text. */
+.markdown table {
+  font-size: 90%;
+}
+
+/* Inline code: no visible border (it is transparent, so the background shows through it, also where
+ * the background itself is translucent, as in info blocks and in dark mode) and very dark red text.
+ * Code in links keeps the color of the link; code blocks are not affected. */
+:root {
+  --inline-code-color: #7c1515;
+}
+
+[data-theme='dark'] {
+  --inline-code-color: #f2b0a8;
+}
+
+:not(pre) > code {
+  border-color: transparent;
+  color: var(--inline-code-color);
+  /* Infima centers inline code vertically, which sits it lower than the text around it. */
+  vertical-align: baseline;
+}
+
+a > code {
+  color: inherit;
+}
+
+/* Text in the footer is 10% smaller. The column titles are sized in rem (not relative to the
+ * footer), so they are scaled separately. */
+.footer {
+  font-size: 90%;
+}
+
+.footer__title {
+  font-size: calc(var(--ifm-h4-font-size) * 0.9);
 }
