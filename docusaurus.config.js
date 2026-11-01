@@ -161,7 +161,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Matthias Zenger. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Matthias Zenger.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -40,7 +40,7 @@ Each example is a short program that prints its results. The programs run one af
 
 Build LispKit from a clone of the [GitHub repository](https://github.com/objecthub/swift-lispkit) and load the program into the LispKit REPL:
 
-```
+```bash
 swift build -c release -Xswiftc "-D" -Xswiftc "SPM"
 .build/release/LispKitRepl -r Sources/LispKit/Resources -d LispKit \
     -p Sources/LispKit/Resources/Examples/Channels.scm
