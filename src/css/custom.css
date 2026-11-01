@@ -2,6 +2,12 @@
  * Global styles. Infima (Docusaurus' CSS framework) variables can be overridden here.
  */
 
+/* Inter, upright and italic, is the font for all text that is not code. It is served by this site itself
+ * (the files come with the npm package @fontsource-variable/inter). Code keeps the monospace stack of
+ * Infima, which starts with Menlo. */
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/inter/wght-italic.css';
+
 /* The accent is the blue of the LispPad icon (#46698f has a contrast of 5.7:1 on white). */
 :root {
   --ifm-color-primary: #46698f;
@@ -11,7 +17,9 @@
   --ifm-color-primary-light: #5c7b9c;
   --ifm-color-primary-lighter: #6f8aa8;
   --ifm-color-primary-lightest: #94a8be;
+  --ifm-font-size-base: 97%;
   --ifm-code-font-size: 85%;
+  --ifm-font-family-base: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   /* Tighter lines than the Docusaurus defaults (1.65 for text, 1.45 for code blocks). */
   --ifm-line-height-base: 1.45;
   --ifm-pre-line-height: 1.3;
@@ -67,6 +75,19 @@
 .theme-doc-sidebar-menu > .theme-doc-sidebar-item-link-level-1 > .menu__link,
 .theme-doc-sidebar-menu > .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
   font-weight: var(--ifm-font-weight-bold);
+}
+
+/* The selected page and the entries on the way to it (Libraries > LispKit > ...) are set in a clearer blue
+ * than the muted accent color of the site, and the row of the selected page has a faintly blue background
+ * (instead of the gray overlay of Infima). */
+:root {
+  --ifm-menu-color-active: #2a68b8;
+  --ifm-menu-color-background-active: rgba(42, 104, 184, 0.08);
+}
+
+[data-theme='dark'] {
+  --ifm-menu-color-active: #7fb0ee;
+  --ifm-menu-color-background-active: rgba(127, 176, 238, 0.12);
 }
 
 /* The second level (LispKit, LispPad, SRFI, ...) is a bit smaller. Only the link itself is set, so
@@ -130,7 +151,7 @@
 
 /* Less padding inside code blocks (Infima default: 1rem all around). */
 .theme-code-block {
-  --ifm-pre-padding: 0.7rem;
+  --ifm-pre-padding: 0.5rem;
   --ifm-code-font-size: 80%;
 }
 
@@ -250,7 +271,7 @@
  * ------------------------------------------------------------------------- */
 @media (max-width: 576px), (max-width: 996px) and (max-height: 500px) {
   :root {
-    --ifm-font-size-base: 96%;
+    --ifm-font-size-base: 95%;
     --navbar-border-color: rgba(0, 0, 0, 0.15);
   }
 
