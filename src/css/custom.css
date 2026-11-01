@@ -90,6 +90,13 @@
   --ifm-menu-color-background-active: rgba(127, 176, 238, 0.12);
 }
 
+/* A category that has a page of its own (LispKit, LispPad, ...) is highlighted on the row around the link
+ * (Infima uses the gray hover background for it), also while the pointer is on it. */
+.menu__list-item-collapsible--active,
+.menu__list-item-collapsible--active:hover {
+  background: var(--ifm-menu-color-background-active);
+}
+
 /* The second level (LispKit, LispPad, SRFI, ...) is a bit smaller. Only the link itself is set, so
  * the third level below it keeps the size of the sidebar. */
 .theme-doc-sidebar-item-link-level-2 > .menu__link,
