@@ -312,3 +312,21 @@ a > code {
 .footer__title {
   font-size: calc(var(--ifm-h4-font-size) * 0.9);
 }
+
+/* Pages without the "On this page" pulldown on phones; the column on the right on desktop stays.
+ * One selector per page, the class is docs-doc-id- plus the page's path without extension. */
+html[class~='docs-doc-id-index'] .theme-doc-toc-mobile {
+  display: none;
+}
+
+/* A smaller "hamburger" icon (the default is 30px; its lines get thinner with it). The padding keeps
+ * the tap area at 30px, the negative margin keeps the icon where it was. */
+.navbar__toggle {
+  padding: 4px;
+  margin-left: -4px;
+}
+
+.navbar__toggle svg {
+  width: 22px;
+  height: 22px;
+}
