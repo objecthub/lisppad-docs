@@ -13,6 +13,7 @@
     "check:urls": "node tools/check-url-parity.mjs",
     "verify:content": "node tools/verify-content.mjs",
     "images:optimize": "node tools/optimize-images.mjs",
+    "icons": "node tools/make-icons.mjs",
     "migrate": "node tools/migrate-gitbook.mjs",
     "check": "npm run lint:docs && npm run build && npm run check:urls && npm run verify:content"
   },

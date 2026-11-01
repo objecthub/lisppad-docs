@@ -35,7 +35,6 @@ Fixes made by hand to the migrated pages, because the GitBook export itself was 
   `lisppad-reference/libraries/lispkit-format.md`.
 * `libraries/lispkit/README.md` had three links to deleted GitBook pages (dropped), and its list of libraries does not
   mention all libraries (the sidebar does).
-* The logo (`static/img/logo.svg`) and the accent color (`src/css/custom.css`) are placeholders.
 * Two images are not used by any page and were not copied: `value.png`, `ocr-illustrated.jpg`.
 
 ## Cutover to www.lisppad.app

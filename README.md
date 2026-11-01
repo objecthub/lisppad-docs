@@ -71,6 +71,7 @@ Text, with `inline code`, [links to other pages](../lispkit/lispkit-list.md) and
 | `npm run check:urls` | Every URL of the old GitBook site (`tools/data/legacy-urls.txt`) must still exist; `-- --live https://www.lisppad.app` checks a deployed site |
 | `npm run verify:content` | Compares the text of every source page with the built page and reports pages that lost content |
 | `npm run images:optimize` | Reports (`-- --write` applies) smaller versions of oversized screenshots |
+| `npm run icons -- <master.png>` | Regenerates the logo, favicon, touch icon and preview image in `static/img/` from one square PNG (the LispPad icon) |
 | `npm run check` | Everything above in one go: lint, build, URL parity, content verification (this is what CI runs) |
 | `npm run migrate` | The one-time GitBook converter, see below |
 

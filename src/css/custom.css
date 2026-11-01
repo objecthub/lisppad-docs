@@ -2,32 +2,46 @@
  * Global styles. Infima (Docusaurus' CSS framework) variables can be overridden here.
  */
 
+/* The accent is the blue of the LispPad icon (#46698f has a contrast of 5.7:1 on white). */
 :root {
-  --ifm-color-primary: #3b5bdb;
-  --ifm-color-primary-dark: #3453c8;
-  --ifm-color-primary-darker: #314fbd;
-  --ifm-color-primary-darkest: #2842a0;
-  --ifm-color-primary-light: #4a68e0;
-  --ifm-color-primary-lighter: #5572e2;
-  --ifm-color-primary-lightest: #7891e9;
+  --ifm-color-primary: #46698f;
+  --ifm-color-primary-dark: #406184;
+  --ifm-color-primary-darker: #3c5a7b;
+  --ifm-color-primary-darkest: #314a64;
+  --ifm-color-primary-light: #5c7b9c;
+  --ifm-color-primary-lighter: #6f8aa8;
+  --ifm-color-primary-lightest: #94a8be;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #8da0f0;
-  --ifm-color-primary-dark: #6f87ec;
-  --ifm-color-primary-darker: #617ae9;
-  --ifm-color-primary-darkest: #3a57dc;
-  --ifm-color-primary-light: #abb9f4;
-  --ifm-color-primary-lighter: #b9c5f6;
-  --ifm-color-primary-lightest: #dae0fb;
+  --ifm-color-primary: #8fb1de;
+  --ifm-color-primary-dark: #84a3cc;
+  --ifm-color-primary-darker: #7b98bf;
+  --ifm-color-primary-darkest: #647c9b;
+  --ifm-color-primary-light: #9cbae2;
+  --ifm-color-primary-lighter: #a8c2e5;
+  --ifm-color-primary-lightest: #bed2ec;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 /* The sidebar has long entries such as "(lispkit draw chart function)". */
 :root {
   --doc-sidebar-width: 20rem !important;
+}
+
+/* A slightly gray navigation column on the left (the mobile drawer keeps the default background). */
+:root {
+  --sidebar-background: #f4f5f7;
+}
+
+[data-theme='dark'] {
+  --sidebar-background: #232427;
+}
+
+.theme-doc-sidebar-container {
+  background-color: var(--sidebar-background);
 }
 
 /* ---------------------------------------------------------------------------

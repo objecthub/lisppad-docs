@@ -22,7 +22,11 @@ function loadRedirects() {
 const config = {
   title: 'LispPad',
   tagline: 'Lightweight Scheme IDE for macOS and iOS',
-  favicon: 'img/logo.svg',
+  favicon: 'img/favicon.png',
+
+  headTags: [
+    {tagName: 'link', attributes: {rel: 'apple-touch-icon', href: `${baseUrl}img/apple-touch-icon.png`}},
+  ],
 
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -107,6 +111,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/icon.png', // preview image when a page is shared
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -114,7 +119,7 @@ const config = {
         title: 'LispPad',
         logo: {
           alt: 'LispPad',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {to: '/news', label: 'News', position: 'left'},
