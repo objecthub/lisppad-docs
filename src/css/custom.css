@@ -11,7 +11,10 @@
   --ifm-color-primary-light: #5c7b9c;
   --ifm-color-primary-lighter: #6f8aa8;
   --ifm-color-primary-lightest: #94a8be;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 85%;
+  /* Tighter lines than the Docusaurus defaults (1.65 for text, 1.45 for code blocks). */
+  --ifm-line-height-base: 1.45;
+  --ifm-pre-line-height: 1.2;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -26,22 +29,157 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* The sidebar has long entries such as "(lispkit draw chart function)". */
+/* A narrow sidebar; long entries such as "(lispkit draw chart function)" wrap onto a second line. */
 :root {
-  --doc-sidebar-width: 20rem !important;
+  --doc-sidebar-width: 15rem !important;
 }
 
-/* A slightly gray navigation column on the left (the mobile drawer keeps the default background). */
+/* A slightly gray navigation column on the left (the mobile drawer keeps the default background)
+ * and a gray header bar that is a bit darker than the sidebar. */
 :root {
   --sidebar-background: #f4f5f7;
+  --ifm-navbar-background-color: #e8eaee;
+  --ifm-navbar-search-input-background-color: #f7f8fa;
 }
 
 [data-theme='dark'] {
   --sidebar-background: #232427;
+  --ifm-navbar-background-color: #18191b;
+  --ifm-navbar-search-input-background-color: #2b2c30;
 }
 
 .theme-doc-sidebar-container {
   background-color: var(--sidebar-background);
+}
+
+/* Smaller fonts in the header bar: the links and the search box. The title "LispPad" keeps its size. */
+.navbar__link,
+.navbar__search-input {
+  font-size: 0.9rem;
+}
+
+/* A slightly smaller font in the sidebar (the default is the 16px of the body text). */
+.theme-doc-sidebar-menu {
+  font-size: 0.9rem;
+}
+
+/* The first level of the sidebar (Home, News, Applications, Libraries, ...) is bold. */
+.theme-doc-sidebar-menu > .theme-doc-sidebar-item-link-level-1 > .menu__link,
+.theme-doc-sidebar-menu > .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+/* The second level (LispKit, LispPad, SRFI, ...) is a bit smaller. Only the link itself is set, so
+ * the third level below it keeps the size of the sidebar. */
+.theme-doc-sidebar-item-link-level-2 > .menu__link,
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.85rem;
+}
+
+/* More space above the entries of the first level (Applications, Libraries, ...) ... */
+.theme-doc-sidebar-menu > .menu__list-item:not(:first-child) {
+  margin-top: 0.7rem;
+}
+
+/* ... and the entries of the third level (the libraries) are packed closer together. */
+.menu__list-item.theme-doc-sidebar-item-link-level-3,
+.menu__list-item.theme-doc-sidebar-item-category-level-3 {
+  --ifm-menu-link-padding-vertical: 0.25rem;
+}
+
+.menu__list-item.theme-doc-sidebar-item-link-level-3:not(:first-child),
+.menu__list-item.theme-doc-sidebar-item-category-level-3:not(:first-child) {
+  margin-top: 0.1rem;
+}
+
+/* A thin line chevron for expanding and collapsing sidebar entries instead of the heavy filled
+ * default of Infima. It points up (the collapsed state is the same icon rotated by Infima); in dark
+ * mode Infima inverts the dark stroke with a filter. */
+:root {
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8.25 14l3.75-3.75 3.75 3.75"></path></svg>');
+}
+
+/* The overview on the right ("On this page"): less space between the entries (the default is 0.5rem)
+ * and between the lines of an entry that wraps. */
+:root {
+  --ifm-toc-padding-vertical: 0.35rem;
+}
+
+.table-of-contents__link {
+  line-height: 1.3;
+}
+
+/* Code blocks: a pale version of the yellow of the LispPad icon (#e1c96c). Docusaurus sets the
+ * background from the Prism theme in inline styles (on the container and on the <pre>), hence
+ * the !important. In dark mode the block stays dark, with a warm tint. */
+:root {
+  --code-block-background: #faf7eb;
+}
+
+[data-theme='dark'] {
+  --code-block-background: #2b2a23;
+}
+
+.theme-code-block {
+  --prism-background-color: var(--code-block-background) !important;
+}
+
+.theme-code-block pre {
+  background-color: var(--code-block-background) !important;
+}
+
+/* Less padding inside code blocks (Infima default: 1rem all around). */
+.theme-code-block {
+  --ifm-pre-padding: 0.7rem;
+}
+
+/* Smaller headings than the Docusaurus defaults (3rem / 2rem / 1.5rem). Infima sets these sizes
+ * on the same selectors, so they are repeated here, and again for phones. */
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.25rem;
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.6rem;
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1.3rem;
+}
+
+@media (max-width: 576px) {
+  .markdown h1:first-child {
+    --ifm-h1-font-size: 1.8rem;
+  }
+
+  .markdown > h2 {
+    --ifm-h2-font-size: 1.4rem;
+  }
+
+  .markdown > h3 {
+    --ifm-h3-font-size: 1.2rem;
+  }
+}
+
+/* Coloured headings: the page title (H1) is dark red, H2 and H3 are dark blue. In dark mode the
+ * same hues are lightened so that they stay readable on the dark background. */
+:root {
+  --heading-1-color: #8b1e1e;
+  --heading-2-color: #1c3d72;
+}
+
+[data-theme='dark'] {
+  --heading-1-color: #e8908a;
+  --heading-2-color: #8fb1de;
+}
+
+.markdown h1 {
+  color: var(--heading-1-color);
+}
+
+.markdown h2,
+.markdown h3 {
+  color: var(--heading-2-color);
 }
 
 /* ---------------------------------------------------------------------------
