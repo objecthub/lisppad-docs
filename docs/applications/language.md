@@ -3,7 +3,7 @@ sidebar_position: 30
 description: Programming language supported by LispPad
 ---
 
-# 📜 Language
+# Language
 
 ### Features
 

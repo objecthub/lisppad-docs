@@ -2,7 +2,7 @@
 description: A selection of illustrated LispKit example programs
 ---
 
-# 📝 LispKit
+# LispKit
 
 LispKit comes with a collection of example programs in its `Examples` folder. The pages in this section present some of them as _illustrated examples_. Each page describes what the program does, shows how to run it, explains the ideas behind it, and walks through the complete source code, piece by piece. The results shown on the pages come from running the programs. At the end, every page suggests variations to try and points to the documentation of the libraries involved.
 

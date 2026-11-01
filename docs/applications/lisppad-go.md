@@ -1,9 +1,9 @@
 ---
 sidebar_position: 20
-sidebar_label: "\U0001F4F1 LispPad Go"
+sidebar_label: LispPad Go
 ---
 
-# 📱 Using LispPad Go
+# Using LispPad Go
 
 ### iPhone
 

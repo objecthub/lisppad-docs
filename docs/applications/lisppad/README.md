@@ -1,2 +1,2 @@
-# 🖥 Using LispPad
+# Using LispPad
 

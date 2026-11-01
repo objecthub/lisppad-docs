@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# 📱 LispPad Go
+# LispPad Go
 
 [LispPad Go](https://apps.apple.com/us/app/lisppad-go/id1565747728) is exclusively released via the iOS App Store. Below is a history of all releases.\
 [<img src="/img/AppStore.png" alt="">](https://apps.apple.com/us/app/lisppad-go/id1565747728)

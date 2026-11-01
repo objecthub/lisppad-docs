@@ -1,13 +1,13 @@
 ---
 sidebar_position: 30
-sidebar_label: ⚙️ SRFI
+sidebar_label: SRFI
 description: >-
   SRFI (Scheme Request for Implementation) is an initiative to extend Scheme.
   Nowadays, most extensions are implemented via Scheme libraries. LispPad and
   LispPad Go support many SRFIs natively.
 ---
 
-# ⚙ SRFI
+# SRFI
 
 These are the [SRFI](https://srfi.schemers.org) libraries supported by LispKit and thus are included in LispPad and LispPad Go:
 

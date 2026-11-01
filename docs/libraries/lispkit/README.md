@@ -2,7 +2,7 @@
 description: Libraries that are included with the LispKit framework.
 ---
 
-# ⚙️ LispKit
+# LispKit
 
 Below is a list of all LispKit libraries which have dedicated documentation. The complete list of libraries, including their source code can be found in the [LispKit GitHub repository](https://github.com/objecthub/swift-lispkit/tree/master/Sources/LispKit/Resources/Libraries). Documentation of all LispKit libraries is also available via the [LispPad libraries reference manual](https://zenger.org/lisppad/assets/LispPad_Reference_1.7.3.pdf).
 

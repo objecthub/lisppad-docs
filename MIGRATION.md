@@ -34,6 +34,10 @@ Fixes made by hand to the migrated pages, because the GitBook export itself was 
   The tildes were restored from the LaTeX reference (`lisppad-reference/libraries/lispkit-format.md`; the site text stays
   master where the two differ). A restored `~` is written `\~` in the Markdown source, because two bare tildes in one
   paragraph or table cell turn into strikethrough again. `npm run lint:docs` warns about any page that contains `<del>`.
+* The emoji in the titles of the second navigation level (📝 LispKit, ⚙️ LispPad, 📱 LispPad Go, ...) were removed after the migration: in the
+  first heading of 12 pages, in the `label` of four `_category_.json` files, in the `sidebar_label` of `libraries/srfi.md` and `applications/lisppad-go.md` and in the link
+  texts of `applications/libraries.md`. The site Markdown is the master: running `npm run migrate` again would bring the emoji back (and
+  undo the other manual fixes listed here).
 
 ## Known problems that were already on the GitBook site
 

@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# 🖥️ LispPad
+# LispPad
 
 The latest version of [LispPad for macOS](https://apps.apple.com/de/app/lisppad/id1258939760) can always be found on the Mac App Store. Below is a history of all releases, including links to the corresponding notarized versions of the binaries.\
 [![](/img/MacAppStore.png)](https://apps.apple.com/de/app/lisppad/id1258939760)
