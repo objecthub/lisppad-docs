@@ -41,7 +41,8 @@ if (flags.live) {
       while (queue.length) {
         const path = queue.shift();
         try {
-          const response = await fetch(new URL(path, base), {redirect: 'follow'});
+          // Keep a base path such as /lisppad-docs/ (staging): new URL('/x', base) would discard it.
+          const response = await fetch(new URL(base.pathname.replace(/\/+$/, '') + path, base), {redirect: 'follow'});
           const finalUrl = new URL(response.url);
           if (!response.ok || finalUrl.host !== base.host) {
             failures++;
