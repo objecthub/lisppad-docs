@@ -4,6 +4,12 @@ import {readdirSync, statSync} from 'node:fs';
 import {join, relative, sep} from 'node:path';
 
 /**
+ * Emoji shortcodes such as `:classical_building:` (capture group 1: the name). GitBook exports them with
+ * escaped underscores (`:classical\_building:`). Times, URLs and text such as `6c:ac:34` are not matched.
+ */
+export const EMOJI_SHORTCODE_RE = /(?<![A-Za-z0-9:/\\]):([a-z0-9]+(?:(?:\\?_|[+-])[a-z0-9]+)*):(?![A-Za-z0-9])/g;
+
+/**
  * Splits text into lines and flags the ones that belong to a fenced code block
  * (the fence lines themselves included).
  * @returns {{line: string, code: boolean}[]}

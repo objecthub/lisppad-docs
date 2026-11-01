@@ -27,12 +27,16 @@ Fixes made by hand to the migrated pages, because the GitBook export itself was 
 * `libraries/lispkit/lispkit-thread-future.md`: the heading read `(lispkit-thread-future)`; now `(lispkit thread future)`.
 * `libraries/lispkit/lispkit-core.md`: the link to `#loading-source-files` pointed at a heading that is called "Source files".
 * `libraries/lispkit/lispkit-markdown.md`: a link to `#lispkit-draw` (an anchor that does not exist) now links to the page `lispkit-draw.md`.
+* `news/lispkit-2.6.0.md`: five emoji shortcodes `:classical\_building:` were not rendered; they are now 🏛️.
+* `libraries/lispkit/lispkit-format.md`: GitBook had turned the MAC-address example `6c:ac:34` into the flag emoji 🇦🇨 (`:ac:`); it reads `6c:ac:34` again.
+* `libraries/lispkit/lispkit-format.md`: GitBook had turned pairs of `~` into strikethrough and dropped the tildes (17 rows,
+  96 places of the directive table, plus examples such as `(format "~2R" 173)`); the "unpack" row was garbled as well.
+  The tildes were restored from the LaTeX reference (`lisppad-reference/libraries/lispkit-format.md`; the site text stays
+  master where the two differ). A restored `~` is written `\~` in the Markdown source, because two bare tildes in one
+  paragraph or table cell turn into strikethrough again. `npm run lint:docs` warns about any page that contains `<del>`.
 
 ## Known problems that were already on the GitBook site
 
-* `libraries/lispkit/lispkit-format.md`: two rows of the directive table (`~^` "up and out" and "unpack") contain
-  broken markup from the GitBook export; the build prints HTML warnings for this page. The correct text is in
-  `lisppad-reference/libraries/lispkit-format.md`.
 * `libraries/lispkit/README.md` had three links to deleted GitBook pages (dropped), and its list of libraries does not
   mention all libraries (the sidebar does).
 * Two images are not used by any page and were not copied: `value.png`, `ocr-illustrated.jpg`.

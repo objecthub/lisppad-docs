@@ -101,4 +101,5 @@ It writes a summary to `migration-report.md`.
 | `<div><figure>` galleries | `<div class="gallery"><figure>` |
 | `../.gitbook/assets/NAME` | `/img/NAME` in `static/img/` (names sanitized, identical files merged) |
 | `<a href="x.md">` in raw HTML | the page route, because Docusaurus only resolves `.md` links written in Markdown |
+| `:classical\_building:` (emoji shortcodes) | the emoji itself (the table `EMOJI` in `tools/migrate-gitbook.mjs`; `npm run lint:docs` reports shortcodes that are not in it) |
 | front matter `layout`, `coverY` | dropped (`description` is kept) |

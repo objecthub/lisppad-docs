@@ -14,7 +14,7 @@ import {createHash} from 'node:crypto';
 import {copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {dirname, join, posix, relative, resolve} from 'node:path';
 import matter from 'gray-matter';
-import {firstHeading, listFiles, mapOutsideCode, scanLines} from './lib/markdown.mjs';
+import {EMOJI_SHORTCODE_RE, firstHeading, listFiles, mapOutsideCode, scanLines} from './lib/markdown.mjs';
 import {DOCS, ROOT, STATIC_IMG, parseArgs} from './lib/paths.mjs';
 
 const {flags} = parseArgs(process.argv.slice(2), ['src', 'report']);
@@ -34,7 +34,13 @@ const KIND_ALT = {
   generic: 'generic procedure',
 };
 
-const stats = {pages: 0, written: 0, skipped: 0, hints: 0, contentRefs: 0, icons: 0, assetRefs: 0, galleries: 0, htmlLinks: 0};
+// Emoji shortcodes found in the LispPad export. `npm run lint:docs` reports any other shortcode that is left over:
+// add it here and re-run the migration (or replace it by the emoji itself).
+const EMOJI = {
+  classical_building: '🏛️',
+};
+
+const stats = {pages: 0, written: 0, skipped: 0, hints: 0, contentRefs: 0, icons: 0, assetRefs: 0, galleries: 0, htmlLinks: 0, emoji: 0};
 const issues = [];
 const labelOverrides = [];
 const issue = (file, message) => issues.push(`${file}: ${message}`);
@@ -196,6 +202,13 @@ function convertText(text, rel) {
     }
   );
   result = result.replace(/\s+data-size="(?:line|original)"/g, '');
+  // Emoji shortcodes: GitBook writes them as :name: (with escaped underscores, :classical\_building:).
+  result = result.replace(EMOJI_SHORTCODE_RE, (all, name) => {
+    // `name` has the escapes of the export removed below, e.g. classical\_building -> classical_building
+    const emoji = EMOJI[name.replace(/\\/g, '')];
+    if (emoji) stats.emoji++;
+    return emoji ?? all;
+  });
   // Docusaurus resolves `.md` links in Markdown, but not in raw HTML (<a href="x.md">): use the route.
   result = result.replace(/(<a\s[^>]*?href=")([^":#]+?\.md)(#[^"]*)?"/g, (_, head, href, fragment = '') => {
     const target = posix.normalize(posix.join(posix.dirname(rel), href));
@@ -295,7 +308,7 @@ const report = [
   `Source: \`${relative(ROOT, SRC)}\``,
   '',
   `- Pages: ${stats.pages} (${stats.written} written, ${stats.skipped} left alone because they already exist; use --force to overwrite)`,
-  `- Converted: ${stats.hints} hints, ${stats.contentRefs} content-refs, ${stats.icons} kind icons, ${stats.galleries} galleries, ${stats.htmlLinks} HTML page links, ${stats.assetRefs} asset references`,
+  `- Converted: ${stats.hints} hints, ${stats.contentRefs} content-refs, ${stats.icons} kind icons, ${stats.galleries} galleries, ${stats.htmlLinks} HTML page links, ${stats.emoji} emoji shortcodes, ${stats.assetRefs} asset references`,
   `- Images: ${usedAssets.size} copied to static/img, ${unreferenced.length} unreferenced and skipped`,
   '',
   '## Problems',

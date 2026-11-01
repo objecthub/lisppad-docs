@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 // Content checks that the Docusaurus build does not do. Exits with status 1 on errors.
 //
-//   errors:   leftover GitBook syntax, images that do not exist in static/img, raw-HTML links to .md files,
-//             missing page heading, duplicate sidebar positions, unterminated code fences
-//   warnings: images that no page uses, very large images, page file names that are not lower-case-hyphenated
+//   errors:   leftover GitBook syntax (tags, data-gb attributes, emoji shortcodes such as :rocket:), images that do
+//             not exist in static/img, raw-HTML links to .md files, missing page heading, duplicate sidebar
+//             positions, unterminated code fences
+//   warnings: images that no page uses, very large images, page file names that are not lower-case-hyphenated,
+//             pages with <del> (GitBook's mangled "~")
 //
 // Usage: npm run lint:docs [-- --verbose]   (--verbose also lists pages without a description)
 
 import {existsSync, readFileSync, statSync} from 'node:fs';
 import {basename, dirname, join, posix} from 'node:path';
 import matter from 'gray-matter';
-import {firstHeading, listFiles, scanLines} from './lib/markdown.mjs';
+import {EMOJI_SHORTCODE_RE, firstHeading, listFiles, scanLines} from './lib/markdown.mjs';
 import {DOCS, ROOT, STATIC_IMG, parseArgs} from './lib/paths.mjs';
 
 const {flags} = parseArgs(process.argv.slice(2));
@@ -34,6 +36,13 @@ for (const rel of pages) {
   if (!firstHeading(content)) errors.push(`${rel}: no level-1 heading ("# Title")`);
   if (/\{%/.test(prose)) errors.push(`${rel}: GitBook tag left over ({% ... %})`);
   if (prose.includes('.gitbook/')) errors.push(`${rel}: reference to .gitbook/ left over`);
+  if (/\sdata-gb-/.test(prose)) errors.push(`${rel}: GitBook-specific HTML left over (data-gb-... attribute)`);
+  for (const m of prose.replace(/`[^`\n]*`/g, '').matchAll(EMOJI_SHORTCODE_RE)) {
+    errors.push(`${rel}: emoji shortcode ${m[0]} is not rendered; use the emoji itself`);
+  }
+  if (/<del>/.test(prose)) {
+    warnings.push(`${rel}: contains <del> (strikethrough); GitBook turns pairs of "~" into strikethrough, check that this is intended`);
+  }
   for (const m of prose.matchAll(/<a\s[^>]*href="([^"]*\.md)(?:#[^"]*)?"/g)) {
     errors.push(`${rel}: raw HTML link to "${m[1]}" is not resolved by Docusaurus; link to the page route (e.g. /examples/lispkit/ocr) or use Markdown link syntax`);
   }
