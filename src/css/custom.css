@@ -1,0 +1,90 @@
+/**
+ * Global styles. Infima (Docusaurus' CSS framework) variables can be overridden here.
+ */
+
+:root {
+  --ifm-color-primary: #3b5bdb;
+  --ifm-color-primary-dark: #3453c8;
+  --ifm-color-primary-darker: #314fbd;
+  --ifm-color-primary-darkest: #2842a0;
+  --ifm-color-primary-light: #4a68e0;
+  --ifm-color-primary-lighter: #5572e2;
+  --ifm-color-primary-lightest: #7891e9;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #8da0f0;
+  --ifm-color-primary-dark: #6f87ec;
+  --ifm-color-primary-darker: #617ae9;
+  --ifm-color-primary-darkest: #3a57dc;
+  --ifm-color-primary-light: #abb9f4;
+  --ifm-color-primary-lighter: #b9c5f6;
+  --ifm-color-primary-lightest: #dae0fb;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* The sidebar has long entries such as "(lispkit draw chart function)". */
+:root {
+  --doc-sidebar-width: 20rem !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * Kind icons ("procedure", "syntax", "constant", ...) next to library signatures.
+ * Written as <img class="kind" src="/img/proc.png" alt="procedure">
+ * ------------------------------------------------------------------------- */
+.markdown img.kind {
+  height: 1.35em;
+  width: auto;
+  /* Reserve the icon's width until it has loaded: a lazy-loaded image without a width never enters the viewport. */
+  aspect-ratio: auto 49 / 27;
+  margin-left: 0.4em;
+  vertical-align: -0.4em;
+}
+
+/* ---------------------------------------------------------------------------
+ * Figures and screenshot galleries.
+ * Written as <figure><img src="/img/x.jpg" alt=""><figcaption><p>Caption</p></figcaption></figure>,
+ * optionally several figures wrapped in <div class="gallery">.
+ * ------------------------------------------------------------------------- */
+.markdown figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.markdown figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.markdown figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.markdown figcaption p {
+  margin: 0;
+}
+
+.markdown .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.markdown .gallery figure {
+  flex: 1 1 14rem;
+  margin: 0;
+}
+
+/* GitBook's coloured labels in release notes, e.g. <mark style="color:green">Date:</mark> */
+.markdown mark {
+  background: none;
+  font-weight: 600;
+}
