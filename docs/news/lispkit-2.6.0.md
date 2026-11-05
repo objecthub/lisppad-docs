@@ -1,6 +1,6 @@
 ---
 sidebar_position: 40
-description: 'Monday, December 22, 2025'
+date: 2025-12-22
 ---
 
 # LispKit 2.6

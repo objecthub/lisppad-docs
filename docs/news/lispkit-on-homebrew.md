@@ -1,6 +1,6 @@
 ---
 sidebar_position: 30
-description: 'Friday, December 26, 2025'
+date: 2025-12-26
 ---
 
 # LispKit on Homebrew

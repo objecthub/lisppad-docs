@@ -54,7 +54,7 @@ for (const rel of pages) {
   if (!data.description && flags.verbose) warnings.push(`${rel}: no description in front matter`);
 
   const base = basename(rel);
-  if (!/^[a-z0-9][a-z0-9.-]*\.mdx?$/.test(base) && !/^README\.md$/.test(base)) {
+  if (!/^[a-z0-9][a-z0-9.-]*\.mdx?$/.test(base) && !/^README\.mdx?$/.test(base)) {
     warnings.push(`${rel}: file name should be lower-case with hyphens (it becomes the page URL)`);
   }
   if (data.sidebar_position !== undefined && !/^(README|index)\.mdx?$/i.test(base)) {

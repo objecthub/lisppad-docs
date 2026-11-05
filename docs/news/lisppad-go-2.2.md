@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-description: 'Sunday, February 15, 2026'
+date: 2026-02-15
 ---
 
 # LispPad Go 2.2

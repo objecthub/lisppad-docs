@@ -27,6 +27,7 @@ The folder structure of `docs/` is the structure of the site: `docs/libraries/li
 sidebar_position: 60            # order in the sidebar (multiples of 10, so pages can be inserted between)
 sidebar_label: (lispkit box)    # optional: sidebar text if it should differ from the heading
 description: One-line summary   # optional: used for search engines and link previews
+date: 2026-02-15                # optional: shown above the title (News posts; the News page lists them by it)
 ---
 
 # (lispkit box)
@@ -38,6 +39,8 @@ Text, with `inline code`, [links to other pages](../lispkit/lispkit-list.md) and
   creates the file, picks the sidebar position and prints the URL. Without `--after` the page goes to the end.
 * **New section:** `npm run new:page` with a folder that does not exist yet also creates `docs/<folder>/_category_.json`
   (sidebar label and position, edit it as needed).
+* **News:** a post is a page in `docs/news/` with a `date`. The News page (`docs/news/README.mdx`, the one MDX page
+  of the site) lists all posts as boxes with title and date, newest first; nothing has to be added there by hand.
 * **Links between pages** use relative file paths ending in `.md` (checked by the build; a broken link fails it).
 * **Code:** fenced blocks with a language get syntax highlighting. `scheme`, `applescript`, `ebnf` and `markdown` are
   enabled; other languages can be added under `prism.additionalLanguages` in `docusaurus.config.js`.

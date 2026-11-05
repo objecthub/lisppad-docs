@@ -2,6 +2,7 @@
 import {existsSync, readFileSync} from 'node:fs';
 import {themes as prismThemes} from 'prism-react-renderer';
 import htmlBaseUrl from './src/remark/html-base-url.mjs';
+import newsPosts from './src/plugins/news-posts.mjs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -106,6 +107,7 @@ const config = {
         redirects: loadRedirects(),
       },
     ],
+    newsPosts, // the list of posts on the News page
   ],
 
   themeConfig:

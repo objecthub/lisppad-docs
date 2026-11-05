@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Safety net against silently lost content: compares the amount of text in every page's Markdown source with the
 // text of the page in build/. A page whose built text is much shorter than its source (e.g. because raw HTML was
-// dropped or a broken construct swallowed the rest of the page) is reported.
+// dropped or a broken construct swallowed the rest of the page) is reported. A page that is much longer than its
+// source is reported too, except for .mdx pages, whose components add text.
 //
 // Usage: npm run verify:content [-- --tolerance 0.15]   (run `npm run build` first)
 
@@ -65,7 +66,10 @@ for (const rel of listFiles(DOCS, ['.md', '.mdx'])) {
   const expected = sourceWords(content) + CHROME_WORDS;
   checked++;
   const ratio = built / expected;
-  if (Math.abs(built - expected) > 10 && (ratio < 1 - TOLERANCE || ratio > 1 + TOLERANCE * 2)) {
+  // An MDX page renders components (e.g. the list of posts on the News page), which add text that is not in
+  // the source, so for those only missing text counts.
+  const tooMuch = !rel.endsWith('.mdx') && ratio > 1 + TOLERANCE * 2;
+  if (Math.abs(built - expected) > 10 && (ratio < 1 - TOLERANCE || tooMuch)) {
     problems.push(`${rel}: ${expected - CHROME_WORDS} words in the source, about ${built - CHROME_WORDS} on the page (${Math.round(ratio * 100)}%)`);
   }
 }
