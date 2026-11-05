@@ -343,6 +343,44 @@
   margin: 0;
 }
 
+/* Galleries in which all figures have the same width: <div class="gallery gallery--2"> has two columns,
+ * <div class="gallery gallery--4"> four (landscape screenshots of the macOS app, portrait screenshots of
+ * the iOS app). On narrow screens there are fewer columns (one and two). Unlike in the plain .gallery, where
+ * a figure on the last, incomplete row grows to fill it, every figure keeps the width of the others. */
+.markdown .gallery--2,
+.markdown .gallery--4 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.markdown .gallery--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.markdown .gallery--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.markdown .gallery--2 img,
+.markdown .gallery--4 img {
+  width: 100%;
+}
+
+/* Four columns need about 640px of content: that is the case from 700px up while the sidebar is hidden (up to
+ * 996px), and from 1130px up with the sidebar and the "On this page" column. In between the content is too
+ * narrow, and below 700px as well, so there are two columns. */
+@media (max-width: 699px), (min-width: 997px) and (max-width: 1129px) {
+  .markdown .gallery--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .markdown .gallery--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* GitBook's coloured labels in release notes, e.g. <mark style="color:green">Date:</mark> */
 .markdown mark {
   background: none;

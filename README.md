@@ -59,6 +59,10 @@ Text, with `inline code`, [links to other pages](../lispkit/lispkit-list.md) and
 
   <div class="gallery"><figure>…</figure> <figure>…</figure></div>
   ```
+
+  In a plain `gallery` the figures share the row and the last one grows to fill it. If all figures should have the
+  same width, use `gallery gallery--2` (two columns) or `gallery gallery--4` (four); there are fewer columns on
+  narrow screens. The Home page does this for its screenshots.
 * **Library signatures** carry a kind icon (`proc`, `syntax`, `const`, `obj`, `pred`, `param`, `generic`):
 
   ```html

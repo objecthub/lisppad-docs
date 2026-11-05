@@ -26,12 +26,12 @@ Please consider joining the [LispPad mailing-list](https://groups.google.com/a/o
 
 [![](/img/MacAppStore.png)](https://apps.apple.com/de/app/lisppad/id1258939760?l=en\&mt=12)
 
-<div class="gallery"><figure><img src="/img/LispPad_1s.jpg" alt=""><figcaption><p>LispPad session and environment browser</p></figcaption></figure> <figure><img src="/img/LispPad_4s.jpg" alt=""><figcaption><p>LispPad editor and tools</p></figcaption></figure> <figure><img src="/img/LispPad_3s.jpg" alt=""><figcaption><p>Graphics windows and the help system</p></figcaption></figure> <figure><img src="/img/LispPad_2s.jpg" alt=""><figcaption><p>Using sessions and editors side-by-side</p></figcaption></figure></div>
+<div class="gallery gallery--2"><figure><img src="/img/LispPad_1s.jpg" alt=""><figcaption><p>LispPad session and environment browser</p></figcaption></figure> <figure><img src="/img/LispPad_4s.jpg" alt=""><figcaption><p>LispPad editor and tools</p></figcaption></figure> <figure><img src="/img/LispPad_3s.jpg" alt=""><figcaption><p>Graphics windows and the help system</p></figcaption></figure> <figure><img src="/img/LispPad_2s.jpg" alt=""><figcaption><p>Using sessions and editors side-by-side</p></figcaption></figure></div>
 
 ## LispPad on iOS
 
 [![](/img/AppStore.png)](https://apps.apple.com/us/app/lisppad-go/id1565747728)
 
-<div class="gallery"><figure><img src="/img/IMG_5700.jpg" alt=""><figcaption><p>Session view</p></figcaption></figure> <figure><img src="/img/IMG_5701.jpg" alt=""><figcaption><p>Library browser</p></figcaption></figure> <figure><img src="/img/IMG_5704.jpg" alt=""><figcaption><p>Documentation viewer</p></figcaption></figure> <figure><img src="/img/IMG_5705.jpg" alt=""><figcaption><p>Graphics in sessions</p></figcaption></figure></div>
+<div class="gallery gallery--4"><figure><img src="/img/IMG_5700.jpg" alt=""><figcaption><p>Session view</p></figcaption></figure> <figure><img src="/img/IMG_5701.jpg" alt=""><figcaption><p>Library browser</p></figcaption></figure> <figure><img src="/img/IMG_5704.jpg" alt=""><figcaption><p>Documentation viewer</p></figcaption></figure> <figure><img src="/img/IMG_5705.jpg" alt=""><figcaption><p>Graphics in sessions</p></figcaption></figure></div>
 
-<div class="gallery"><figure><img src="/img/IMG_5706.jpg" alt=""><figcaption><p>Program editor</p></figcaption></figure> <figure><img src="/img/IMG_5707.jpg" alt=""><figcaption><p>Definition browser</p></figcaption></figure> <figure><img src="/img/IMG_5708.jpg" alt=""><figcaption><p>File browser</p></figcaption></figure> <figure><img src="/img/IMG_5709.jpg" alt=""><figcaption><p>Settings</p></figcaption></figure></div>
+<div class="gallery gallery--4"><figure><img src="/img/IMG_5706.jpg" alt=""><figcaption><p>Program editor</p></figcaption></figure> <figure><img src="/img/IMG_5707.jpg" alt=""><figcaption><p>Definition browser</p></figcaption></figure> <figure><img src="/img/IMG_5708.jpg" alt=""><figcaption><p>File browser</p></figcaption></figure> <figure><img src="/img/IMG_5709.jpg" alt=""><figcaption><p>Settings</p></figcaption></figure></div>
