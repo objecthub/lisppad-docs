@@ -11,6 +11,8 @@ description: >-
 
 These are the [SRFI](https://srfi.schemers.org) libraries supported by LispKit and thus are included in LispPad and LispPad Go:
 
+<div class="box-list box-list--columns">
+
 * [SRFI 1: List Library](https://srfi.schemers.org/srfi-1/srfi-1.html)
 * [SRFI 2: AND-LET\* - an AND with local bindings, a guarded LET\* special form](https://srfi.schemers.org/srfi-2/srfi-2.html)
 * [SRFI 6: Basic String Ports](https://srfi.schemers.org/srfi-6/srfi-6.html)
@@ -104,3 +106,5 @@ These are the [SRFI](https://srfi.schemers.org) libraries supported by LispKit a
 * [SRFI 232: Flexible curried procedures](https://srfi.schemers.org/srfi-232/srfi-232.html)
 * [SRFI 233: INI files](https://srfi.schemers.org/srfi-233/srfi-233.html)
 * [SRFI 236: Evaluating expressions in an unspecified order](https://srfi.schemers.org/srfi-236/srfi-236.html)
+
+</div>

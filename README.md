@@ -39,8 +39,14 @@ Text, with `inline code`, [links to other pages](../lispkit/lispkit-list.md) and
   creates the file, picks the sidebar position and prints the URL. Without `--after` the page goes to the end.
 * **New section:** `npm run new:page` with a folder that does not exist yet also creates `docs/<folder>/_category_.json`
   (sidebar label and position, edit it as needed).
-* **News:** a post is a page in `docs/news/` with a `date`. The News page (`docs/news/README.mdx`, the one MDX page
-  of the site) lists all posts as boxes with title and date, newest first; nothing has to be added there by hand.
+* **News:** a post is a page in `docs/news/` with a `date`. The News page (`docs/news/README.mdx`) lists all posts as
+  boxes with title and date, newest first; nothing has to be added there by hand.
+* **Lists of pages as boxes:** `docs/news/`, `docs/libraries/lispkit/` and `docs/libraries/lisppad/` have an MDX landing
+  page (`README.mdx`) that shows all pages of its folder with `<PageList folder="libraries/lispkit" columns />`
+  (`columns` = two columns on wide screens), so a new library page appears there by itself, in sidebar order. A new
+  folder has to be added to the `folders` of the `folder-pages` plugin in `docusaurus.config.js`. A plain bullet list
+  of links, as on the SRFI page, gets the same look when it is wrapped in `<div class="box-list box-list--columns">`
+  (blank lines around the list).
 * **Links between pages** use relative file paths ending in `.md` (checked by the build; a broken link fails it).
 * **Code:** fenced blocks with a language get syntax highlighting. `scheme`, `applescript`, `ebnf` and `markdown` are
   enabled; other languages can be added under `prism.additionalLanguages` in `docusaurus.config.js`.

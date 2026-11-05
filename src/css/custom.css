@@ -219,39 +219,75 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-/* The list of posts on the News page (src/components/NewsList): one box per post, the whole box is the
- * link. On hover the box gets the faint blue of the selected sidebar entry. */
-.news-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 1.5rem 0;
+/* ---------------------------------------------------------------------------
+ * Lists of pages as boxes: the posts on the News page, the libraries on the LispKit and LispPad pages,
+ * the SRFIs. <PageList folder="..."> (src/components/PageList) makes them from the pages of a folder. In
+ * a page written in plain Markdown, a bullet list gets the same look when it is wrapped in
+ *   <div class="box-list box-list--columns">  (blank line)  * [Title](link) ...  (blank line)  </div>
+ * The link of every item is a box. On hover the box gets the faint blue of the selected sidebar entry.
+ * `--columns` sets the boxes in two columns on wide screens, the first half of the list in the left column,
+ * and in one column on phones.
+ * The gap between two boxes is padding of the item (which has no border or background of its own), not a
+ * margin: browsers disagree about margins at the break between two columns, and one of them moved the
+ * first box of the second column down by the size of the margin.
+ * ------------------------------------------------------------------------- */
+.markdown .box-list ul {
+  list-style: none;
+  margin: 1.5rem 0 0.75rem;
+  padding: 0;
 }
 
-.news-card {
+.markdown .box-list li {
+  margin: 0;
+  padding: 0 0 0.75rem;
+}
+
+.markdown .box-list li a {
   display: block;
   padding: 0.75rem 1.1rem;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
-  color: inherit;
-  transition: border-color var(--ifm-transition-fast) ease, background-color var(--ifm-transition-fast) ease;
-}
-
-.news-card:hover {
-  border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-menu-color-background-active);
-  color: inherit;
-  text-decoration: none;
-}
-
-.news-card .doc-date {
-  margin-bottom: 0.1rem;
-}
-
-.news-card__title {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--heading-2-color);
+  transition: border-color var(--ifm-transition-fast) ease, background-color var(--ifm-transition-fast) ease;
+}
+
+.markdown .box-list li a:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-menu-color-background-active);
+  text-decoration: none;
+}
+
+.markdown .box-list li a:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+
+/* The date above the title, inside the link. */
+.markdown .box-list li .doc-date {
+  margin-bottom: 0.1rem;
+  font-weight: normal;
+}
+
+.markdown .box-list--columns ul {
+  column-count: 2;
+  column-gap: 0.75rem;
+}
+
+.markdown .box-list--columns li {
+  break-inside: avoid;
+}
+
+.markdown .box-list--columns li a {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .markdown .box-list--columns ul {
+    column-count: 1;
+  }
 }
 
 /* ---------------------------------------------------------------------------
