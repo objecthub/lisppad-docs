@@ -21,6 +21,6 @@ _LispPad Go_ releases are exclusively [published via the iOS App Store](https://
 
 ### Reference Manuals
 
-A _library reference manual_ for LispPad and LispPad Go can be [downloaded as a PDF file](https://zenger.org/lisppad/assets/LispPad_Reference_2.2.pdf).
+A _library reference manual_ for LispPad and LispPad Go can be [downloaded as a PDF file](https://zenger.org/lisppad/assets/LispPad_Reference_2.4.pdf).
 
 A specification of the R7RS standard of Scheme can be downloaded [here](https://small.r7rs.org/attachment/r7rs.pdf).

@@ -9,6 +9,53 @@ The latest version of [LispPad for macOS](https://apps.apple.com/de/app/lisppad/
 
 <details open>
 
+<summary><strong>Version 2.3.1</strong></summary>
+
+_<mark style="color:green;">Date:</mark>_ 2026-09-16\
+_<mark style="color:green;">Download:</mark>_ [LispPad 2.3.1 (1843)](https://zenger.org/lisppad/assets/LispPad_2.3.1-1843.zip)
+
+_<mark style="color:green;">Bug fixes:</mark>_
+
+* Bug fixes in library `(lispkit date-time)`
+* Worked around Shortcuts bug and moved attachments up into the summary of the "Run Program" action
+* Fixed inline documentation for new libraries and procedures
+
+_<mark style="color:green;">New features:</mark>_
+
+* New sample code: `DrawCalendar.scm`
+
+</details>
+
+<details>
+
+<summary><strong>Version 2.3</strong></summary>
+
+_<mark style="color:green;">Date:</mark>_ 2026-09-13\
+_<mark style="color:green;">Download:</mark>_ [LispPad 2.3 (1833)](https://zenger.org/lisppad/assets/LispPad_2.3-1833.zip)
+
+_<mark style="color:green;">Bug fixes:</mark>_
+
+* Fixed behavior of procedure `string->number`
+* Several bug fixes in library `(lispkit image)`, especially related to preserving the orientation of images
+* Fixed `Examples/MermaidDiagrams.scm`
+
+_<mark style="color:green;">New features:</mark>_
+
+* LispPad programs can now be executed as "applets" running both in the app and as an intent within Shortcut flows
+* Included libray `(lisppad applet)` which provides an API for managing the lifecycle of an applet, in particular supporting data exchange
+* New library for drawing function charts: `(lispkit draw chart function)`
+* Support for turning Markdown into a textual representation to be displayed on ANSI terminals via library `(lispkit markdown)`; new procedures `markdown->string` and `markdown->styled-text`
+* Support aligning/padding based on display width in library `(lispkit format)` with procedures `format-config-align-display` and `format-config-align-display-set!`
+* New procedure `string-display-width` in library `(lispkit string)`
+* New procedures `device-battery-level` and `device-battery-state` in library `(lispkit system)`
+* New procedures `show-preview-panel`, `show-preview-panel-for-file`, `load-bitmaps-from-library`, `load-bytevectors-from-library`, and `save-bitmap-in-library` in library `(lisppad system macos)`
+* Updated LispPad Library Reference and included new documentation for libraries `(lispkit sxml)`, `(lispkit sxml html)`, `(lispkit sxml xml)`, `(lispkit wt-tree)`, `(lispkit draw chart function)`, `(lisppad audio)`, and `(lisppad applet)`
+* New sample code: `ImposeLogo.scm`, `DrawFunctionCharts.scm`, `Connect4.scm`, `AnsiMarkdown.scm`
+
+</details>
+
+<details>
+
 <summary><strong>Version 2.2</strong></summary>
 
 _<mark style="color:green;">Date:</mark>_ 2026-02-01\

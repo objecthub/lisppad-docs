@@ -7,6 +7,47 @@ sidebar_position: 20
 [LispPad Go](https://apps.apple.com/us/app/lisppad-go/id1565747728) is exclusively released via the iOS App Store. Below is a history of all releases.\
 [<img src="/img/AppStore.png" alt="">](https://apps.apple.com/us/app/lisppad-go/id1565747728)
 
+<details open>
+
+<summary><strong>Version 2.4</strong></summary>
+
+_<mark style="color:green;">Date:</mark>_ 2026-11-05\
+_<mark style="color:green;">Changes:</mark>_
+
+* Adopted the Liquid Glass design system of iOS 26 and iOS 27
+* Optimized experience for the iPhone Duo; new setting for controlling how rotating or folding the device affects the editor/console layout
+* New Quick Look extension: Scheme files are previewed with syntax highlighting in Files, Mail, and Messages
+* Revamped toolbar design; toolbars and menus now better adapt to the available space
+* Improved interoperability of the editor; opening a file from outside of LispPad now brings up the editor
+* Search and replace now support regular expressions, highlights all matches, and shows the number of matches
+* New setting for showing the cursor location in the editor
+* Much more powerful PDF viewer with text search, outline-based navigation, and sharing
+* New "scroll down" button for console output; reimplemented the command history
+* Reimplemented Markdown previewer supporting tables, definition lists, remote images, Mermaid diagrams and LaTeX math formulas
+* Library `(lispkit markdown)` now supports task lists, underline, strikethrough, LaTeX formulas, and Mermaid diagrams, and can export documents as PDF and RTF
+* Library `(lispkit http server)` fixes a path traversal vulnerability, supports persistent connections, and listens on the loopback address by default
+* Extensions of libraries `(lispkit draw)`, `(lispkit date-time)`, `(lispkit system)`, `(lispkit vision)`, and `(lispkit json)`
+* Fixed the handling of errors raised by the virtual machine, the `exit` procedure, a compiler bug, and thread-related crashes
+* Updated documentation and LispPad Library Reference
+* Interpreter now based on LispKit 2.6.4
+
+</details>
+
+<details>
+
+<summary><strong>Version 2.3.1</strong></summary>
+
+_<mark style="color:green;">Date:</mark>_ 2026-09-15\
+_<mark style="color:green;">Changes:</mark>_
+
+* Introduced `(lisppad system)` to enable programs across macOS and iOS that use functionality exposed by `(lisppad system macos)` and `(lisppad system ios)`
+* New library supporting speech synthesis: `(lisppad speech)`
+* Bugfixes in library `(lispkit date-time)`
+* New sample code: `DrawCalendar.scm`
+* Updated documentation
+
+</details>
+
 <details>
 
 <summary><strong>Version 2.3</strong></summary>

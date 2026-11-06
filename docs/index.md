@@ -18,7 +18,7 @@ _LispPad_ is a simple, lightweight, integrated development environment for devel
 * A console with a read-eval-print loop
 * Support for networking, audio, graphics, compression, Markdown, SQLite, etc.
 
-_LispPad_ is free and comes in two version: [_LispPad_ for macOS](releases/lisppad.md) and [_LispPad Go_ for iOS](releases/lisppad-go.md). The two versions can synchronize their programs, libraries and assets via iCloud. You can download a [reference manual](https://zenger.org/lisppad/assets/LispPad_Reference_2.3.pdf) documenting all the core LispPad libraries.
+_LispPad_ is free and comes in two version: [_LispPad_ for macOS](releases/lisppad.md) and [_LispPad Go_ for iOS](releases/lisppad-go.md). The two versions can synchronize their programs, libraries and assets via iCloud. You can download a [reference manual](https://zenger.org/lisppad/assets/LispPad_Reference_2.4.pdf) documenting all the core LispPad libraries.
 
 Please consider joining the [LispPad mailing-list](https://groups.google.com/a/objecthub.com/g/lisppad).
 
