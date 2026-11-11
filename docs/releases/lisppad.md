@@ -9,6 +9,39 @@ The latest version of [LispPad for macOS](https://apps.apple.com/de/app/lisppad/
 
 <details open>
 
+<summary><strong>Version 2.4</strong></summary>
+
+_<mark style="color:green;">Date:</mark>_ 2026-11-11
+
+_<mark style="color:green;">Bug fixes:</mark>_
+
+* Fixed a potential crash and memory leak when closing a session
+* Optimized code completion suggestions
+* Graphics windows that are created without explicit dimensions now fit their drawing
+* Fixed several layout issues in session, editor and graphics windows
+* Saved editor documents can now be shared via "File > Share"
+* Fixed the handling of errors raised by the virtual machine, the exit procedure, a compiler bug, and thread-related crashes
+
+_<mark style="color:green;">New features:</mark>_
+
+* User interface is now compliant with Liquid Glass
+* Session and editor windows now support dark mode and follow the appearance of the system
+* Syntax colors can be set separately for the light and the dark appearance
+* New _Library Documentation_ window for browsing the documentation of all libraries and their identifiers
+* New _Markdown_ editor with a live preview next to the editor. The preview supports tables, task lists, syntax-highlighted code blocks, images, Mermaid diagrams and mathematical formulas, follows the scroll position of the editor, and has a text size menu. Images that are referenced by relative path can be loaded after granting access to the folder of the document.
+* The Run button of editor windows can be configured by choosing the session in which the code is run (by holding down the button)
+* Drawings and images that are returned by expressions in a session are now shown as images below their textual representation. The maximum size of such images can be defined in the settings.
+* Text and images can be copied or exported from sessions and editors with their formatting
+* The "+" button in session windows shows a menu of the most recently loaded programs when it is held down
+* New menu item "File > New Tab" for opening a new document in a tab of the current window
+* Library `(lispkit markdown)` now supports task lists, underline, strikethrough, LaTeX formulas, and Mermaid diagrams, and can export documents as PDF and RTF
+* Library `(lispkit http server)` fixes a path traversal vulnerability, supports persistent connections, and listens on the loopback address by default
+* Extensions of libraries `(lispkit draw)`, `(lispkit date-time)`, `(lispkit system)`, `(lispkit vision)`, and `(lispkit json)`
+
+</details>
+
+<details>
+
 <summary><strong>Version 2.3.1</strong></summary>
 
 _<mark style="color:green;">Date:</mark>_ 2026-09-16\

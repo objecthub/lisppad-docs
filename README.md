@@ -55,12 +55,13 @@ Text, with `inline code`, [links to other pages](../lispkit/lispkit-list.md) and
 * **Figures and screenshot galleries** use HTML, which works in `.md` files:
 
   ```html
-  <figure><img src="/img/Session.png" alt="The session window"><figcaption><p>A LispPad session</p></figcaption></figure>
+  <figure><img src="/img/session-window.png" alt="The session window"><figcaption><p>A LispPad session</p></figcaption></figure>
 
   <div class="gallery"><figure>…</figure> <figure>…</figure></div>
   ```
 
-  In a plain `gallery` the figures share the row and the last one grows to fill it. If all figures should have the
+  Screenshots of whole windows come with the shadow that macOS draws around them; a cropped screenshot (of a toolbar,
+  say) gets one with `<img class="shadow" …>`. In a plain `gallery` the figures share the row and the last one grows to fill it. If all figures should have the
   same width, use `gallery gallery--2` (two columns) or `gallery gallery--4` (four); there are fewer columns on
   narrow screens. The Home page does this for its screenshots.
 * **Library signatures** carry a kind icon (`proc`, `syntax`, `const`, `obj`, `pred`, `param`, `generic`):

@@ -5,82 +5,143 @@ description: Programming language supported by LispPad
 
 # Language
 
-### Features
+## Language features
 
-LispPad is an IDE for the programming language Scheme. The Scheme dialect supported by LispPad is based on the [R7RS (small) standard](http://www.r7rs.org). The following features are available:
+_LispPad_ is an application for developing and running Scheme code. The programming language supported
+by _LispPad_ is called _LispKit_. _LispKit_ implements the following features, many of which are based on
+[R7RS (small)](http://r7rs.org):
 
-* Modules via [R7RS](http://www.r7rs.org) libraries
-* Hygienic macros based on the _syntax-rules_ standard
-* First-class environments
-* `call/cc`, `dynamic-wind` and exceptions
-* Dynamically-scoped paramaters
-* Multiple return values
-* Delayed execution via promises and streams
-* Support for the full numerical tower consisting of arbitrary size integers, rationals, real numbers, and inexact complex numbers.
-* Unicode strings and characters
-* Vectors and bytevectors
-* Text and binary ports
-* [R7RS](http://www.r7rs.org)-compliant records
-* [R6RS](http://www.r6rs.org)-compliant hashtables
-* [R6RS](http://www.r6rs.org)-compliant enumerations
-* SRFI 18-compliant multi-threading
+- Modules based on R7RS libraries
+- Hygienic macros based on `syntax-rules`
+- First-class environments
+- `call/cc`, `dynamic-wind` and exceptions
+- Dynamically-scoped parameters
+- Multiple return values
+- Delayed execution via promises and streams
+- Support for the full numerical tower consisting of arbitrary size integers, rationals, real numbers, and inexact complex numbers.
+- Unicode strings and characters
+- Vectors and bytevectors
+- Text and binary ports
+- R7RS-compliant records
+- [R6RS](http://www.r6rs.org)-compliant hashtables
+- [R6RS](http://www.r6rs.org)-compliant enumerations
+- SRFI 18-compliant multi-threading
+- All R7RS (small) libraries: `(scheme base)`, `(scheme case-lambda)`, `(scheme char)`, `(scheme complex)`,
+  `(scheme cxr)`, `(scheme eval)`, `(scheme file)`, `(scheme inexact)`, `(scheme lazy)`,
+  `(scheme load)`, `(scheme process-context)`, `(scheme read)`, `(scheme repl)`, `(scheme time)`,
+  `(scheme write)`, `(scheme r5rs)`
+- Some R7RS (large) libraries from Scheme Red and Scheme Tangerine editions:
+  `(scheme bitwise)`, `(scheme box)`,  `(scheme charset)`, `(scheme comparator)`, `(scheme division)`,
+  `(scheme fixnum)`, `(scheme flonum)`, `(scheme generator)`, `(scheme hash-table)`,
+  `(scheme ideque)`, `(scheme list)`, `(scheme mapping)`, `(scheme red)`, `(scheme rlist)`,
+  `(scheme set)`, `(scheme sort)`, `(scheme stream)`, `(scheme text)`, `(scheme vector)`
+- LispKit-specific libraries:
+  `(lispkit archive tar)`,
+  `(lispkit archive zip)`,
+  `(lispkit base)`,
+  `(lispkit bitset)`,
+  `(lispkit box)`,
+  `(lispkit bytevector)`,
+  `(lispkit char-set)`,
+  `(lispkit char)`,
+  `(lispkit clos)`,
+  `(lispkit combinator)`,
+  `(lispkit comparator)`,
+  `(lispkit control)`,
+  `(lispkit core)`,
+  `(lispkit crypto)`,
+  `(lispkit csv)`,
+  `(lispkit datatype)`,
+  `(lispkit date-time)`,
+  `(lispkit debug)`,
+  `(lispkit disjoint-set)`,
+  `(lispkit draw)`,
+  `(lispkit draw barcode)`,
+  `(lispkit draw chart)`,
+  `(lispkit draw chart bar)`,
+  `(lispkit draw chart function)`,
+  `(lispkit draw map)`,
+  `(lispkit draw turtle)`,
+  `(lispkit draw web)`,
+  `(lispkit dynamic)`,
+  `(lispkit enum)`,
+  `(lispkit format)`,
+  `(lispkit graph)`,
+  `(lispkit gvector)`,
+  `(lispkit hashtable)`,
+  `(lispkit heap)`,
+  `(lispkit http)`,
+  `(lispkit http oauth)`,
+  `(lispkit http server)`,
+  `(lispkit image)`,
+  `(lispkit image process)`,
+  `(lispkit iterate)`,
+  `(lispkit json)`,
+  `(lispkit json schema)`,
+  `(lispkit list)`,
+  `(lispkit list set)`,
+  `(lispkit location)`,
+  `(lispkit log)`,
+  `(lispkit logic)`,
+  `(lispkit markdown)`,
+  `(lispkit match)`,
+  `(lispkit math)`,
+  `(lispkit math matrix)`,
+  `(lispkit math stats)`,
+  `(lispkit math util)`,
+  `(lispkit object)`,
+  `(lispkit pdf)`,
+  `(lispkit port)`,
+  `(lispkit prettify)`,
+  `(lispkit prolog)`,
+  `(lispkit queue)`,
+  `(lispkit record)`,
+  `(lispkit regexp)`,
+  `(lispkit serialize)`,
+  `(lispkit set)`,
+  `(lispkit sqlite)`,
+  `(lispkit stack)`,
+  `(lispkit stream)`,
+  `(lispkit string)`,
+  `(lispkit styled-text)`,
+  `(lispkit sxml)`,
+  `(lispkit sxml html)`,
+  `(lispkit sxml xml)`,
+  `(lispkit system)`,
+  `(lispkit system call)`,
+  `(lispkit system keychain)`,
+  `(lispkit system pasteboard)`,
+  `(lispkit test)`,
+  `(lispkit text-table)`,
+  `(lispkit thread)`,
+  `(lispkit thread channel)`,
+  `(lispkit thread future)`,
+  `(lispkit thread shared-queue)`,
+  `(lispkit type)`,
+  `(lispkit url)`,
+  `(lispkit vector)`,
+  `(lispkit vision)`, and
+  `(lispkit wt-tree)`.
+- LispPad-specific libraries:
+  `(lisppad applescript)`,
+  `(lisppad applet)`,
+  `(lisppad audio)`,
+  `(lisppad log)`,
+  `(lisppad speech)`,
+  `(lisppad system macos)`, and
+  `(lisppad turtle)`.
 
-### Incompatibilities
+The libraries are documented in the [Libraries](libraries.md) section: the [LispKit libraries](../libraries/lispkit/README.mdx), the [LispPad-specific libraries](../libraries/lisppad/README.mdx), and the [SRFI libraries](../libraries/srfi.md).
 
-_LispPad_ is incompatible or incomplete with respect to the following [R7RS](http://www.r7rs.org) features:
+## Language limitations
 
-* Lists are immutable. Mutable cons-cells are supported in a way similar to [Racket](https://racket-lang.org).
-* Datum comments introduced via `#;` do not always work as expected.
+The language support by _LispPad_ is incompatible or incomplete with respect to the following R7RS features:
 
-### Included libraries
+- Lists are immutable. Mutable cons-cells are supported in a way similar to
+[Racket](https://racket-lang.org)
+- Literals in `syntax-rules` are not matched based on their definition but their symbol identity
 
-_LispPad_ supports all standard R7RS (small) libraries:
-
-* `(scheme base)`
-* `(scheme case-lambda)`
-* `(scheme char)`
-* `(scheme complex)`
-* `(scheme cxr)`,
-* `(scheme eval)`
-* `(scheme file)`
-* `(scheme inexact)`
-* `(scheme lazy)`
-* `(scheme load)`
-* `(scheme process-context)`
-* `(scheme read)`
-* `(scheme repl)`
-* `(scheme time)`
-* `(scheme write)`
-* `(scheme r5rs)`
-
-Most of the R7RS (large) libraries from the "Red" and "Tangerine" edition are supported as well:
-
-* `(scheme bitwise)`
-* `(scheme box)`
-* `(scheme charset)`
-* `(scheme comparator)`
-* `(scheme division)`
-* `(scheme fixnum)`
-* `(scheme flonum)`
-* `(scheme generator)`
-* `(scheme hash-table)`
-* `(scheme ideque)`
-* `(scheme list)`
-* `(scheme mapping)`
-* `(scheme rlist)`
-* `(scheme set)`
-* `(scheme sort)`
-* `(scheme stream)`
-* `(scheme text)`
-* `(scheme vector)`
-
-_LispPad_ also includes all the [_LispKit_ libraries](../libraries/lispkit/).
-
-_LispPad_ comes with several [_LispPad_-specific libraries](../libraries/lisppad/). They provide a native integration of drawings defined via `(lispkit draw)` and `(lispkit draw turtle)`, a means to script the application, an API to do geocoding, speech synthesis, etc. There is also a _LispPad_-specific logging library extending the _LispKit_ logging library for usage within the IDE.
-
-LispPad also includes many [SRFI (Scheme Request for Implementation) libraries](../libraries/srfi.md).
-
-### Source code
+## Source code
 
 The source code of the Scheme interpreter and the included libraries has been open-sourced and [published at GitHub](https://github.com/objecthub/swift-lispkit). Example code and the Scheme sources of the included libraries can be found [here](https://github.com/objecthub/swift-lispkit/tree/master/Sources/LispKit/Resources).
 
